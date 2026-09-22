@@ -1,0 +1,33 @@
+# Python
+.venv38/
+.venv311/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Cython build products (see setup_cython.py)
+build/
+source/simulation_environment/cython/*.c
+source/simulation_environment/cython/*.so
+source/simulation_environment/cython/*.html
+
+# Local run outputs and data archives
+output/
+output_surrogate_models/
+episode_dataset/
+phase1_audit/
+phase2_search/
+phase3_campaigns/
+phase1_labelling.tar.gz
+phase1_audit.tar.gz
+phase2_search.tar.gz
+phase3_campaigns.tar.gz
+sim01_0.9.14-dirty.tar.gz
+simreq-source.tar.gz
+SHA256SUMS
+
+# Editors and tools
+.idea/
+.vscode/
+.code-review-graph/

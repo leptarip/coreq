@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "declaration_path": "two_tau_declaration.json",
+  "design_space": "v3",
+  "scenarios": [
+    {
+      "name": "intersection1",
+      "config": "../../../configuration/config_intersection1_debug.toml"
+    },
+    {
+      "name": "intersection2",
+      "config": "../../../configuration/config_intersection2_debug.toml"
+    }
+  ],
+  "surrogate": {
+    "mode": "precomputed_f_min",
+    "path": "../../../results/phase1/audited_set/f_min_v3.npy"
+  },
+  "statistics": {
+    "P": 0.05,
+    "alpha_frac": 0.05,
+    "d_safe": 0.5
+  },
+  "paths": {
+    "freeze_root": "../../../output/phase1/audit_freeze",
+    "execution_root": "../../../output/phase1/audit_run"
+  },
+  "runtime": {
+    "python_executable": null,
+    "carla_agents_path": "/path/to/carla/PythonAPI/carla",
+    "carla_path": "/path/to/CARLA_0.9.14/CarlaUE4.sh",
+    "num_workers": 3,
+    "max_in_flight": 6,
+    "base_port": 2000,
+    "heartbeat_s": 5.0,
+    "max_retries": 10,
+    "spawn_stagger_s": 6.0,
+    "max_worker_respawns": 2
+  }
+}

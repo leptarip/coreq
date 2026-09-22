@@ -1,0 +1,48 @@
+{
+  "accepted_path": "accepted_v3.npy",
+  "audited_count": 11896,
+  "design_keys": [
+    "prob",
+    "gen_t",
+    "fault",
+    "unc_p",
+    "unc_v",
+    "ego_ad_period",
+    "packet_drop_rate",
+    "network.delay_min",
+    "network.delay_avg",
+    "network.jit"
+  ],
+  "design_space": "v3",
+  "execution": {
+    "episode_jobs": 4234,
+    "fresh_episode_jobs": 4234,
+    "raw_episode_records": 4234,
+    "referenced_episode_uids": 4234,
+    "reused_episode_jobs": 0
+  },
+  "f_min_path": "f_min_v3.npy",
+  "grid_rows": 27720,
+  "protocol": "portfolio_audit_audited_set",
+  "scenarios": [
+    "intersection1",
+    "intersection2"
+  ],
+  "schema_version": 1,
+  "stage_id": "primary",
+  "statistics": {
+    "P": 0.05,
+    "alpha_frac": 0.05,
+    "cp_upper": 0.002499618666934257,
+    "d_safe": 0.5,
+    "global_delta": 0.01,
+    "k": 0,
+    "malformed_episodes": 0,
+    "method": "bonferroni",
+    "n": 2117,
+    "stage_delta": 0.005,
+    "unsafe_bound": 0.049992373338685135
+  },
+  "status": "passed",
+  "tau": 0.9523809523809523
+}

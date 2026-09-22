@@ -1,0 +1,154 @@
+{
+  "aggregate": {
+    "estimate": 0.0029121113225255937,
+    "partition_residual": 2.6020852139652106e-18,
+    "relative_standard_error": 0.2129362723289139,
+    "standard_error": 0.0006200941296254234
+  },
+  "audited_episodes": 10000,
+  "complete": true,
+  "estimates": {
+    "M1": {
+      "aggregate_failures": 1263,
+      "ci_lower": 0.0004359989686952288,
+      "ci_upper": 0.0006502761654988122,
+      "estimate": 0.0005324657148817847,
+      "estimator": "iid_weighted",
+      "event_ess": 95.24683047210033,
+      "interval_method": "asymptotic-log-scale-normal-delta-two-sided",
+      "maximum_event_contribution": 0.06504160827385648,
+      "mode_events": 283,
+      "precision_diagnostics": {
+        "failed_gates": [],
+        "reason": null,
+        "status": "precise"
+      },
+      "predeclared_interval": {
+        "alpha": 0.016666666666666666,
+        "lower": 0.0004171219444629543,
+        "status": "approximate_log_delta",
+        "upper": 0.0006797046793824346
+      },
+      "relative_standard_error": 0.10198076797356175,
+      "standard_error": 5.4301262523235905e-05
+    },
+    "early_detection_fresh_first_delivery": {
+      "conditional_share_of_failure": {
+        "estimate": 0.196120268899501,
+        "pointwise_ci95_logit_delta": {
+          "lower": 0.12306512681244178,
+          "upper": 0.29781505793631363
+        },
+        "standard_error_delta": 0.04448243906841802
+      },
+      "estimate": 0.0005711240556390009,
+      "event_ess": 101.27236357766665,
+      "events_under_proposal": 312,
+      "interval_method": "asymptotic-log-delta",
+      "maximum_event_contribution": 0.06063906099674182,
+      "pointwise_ci95": {
+        "lower": 0.0004705132801820489,
+        "upper": 0.0006932486300988898
+      },
+      "precision_diagnostics": {
+        "failed_gates": [],
+        "reason": null,
+        "status": "precise"
+      },
+      "predeclared_interval": {
+        "alpha": 0.016666666666666666,
+        "lower": 0.00045075001831293936,
+        "status": "approximate_log_delta",
+        "upper": 0.0007236443120964749
+      },
+      "relative_standard_error": 0.09887031781918253,
+      "standard_error": 5.64672168952085e-05,
+      "within_design_family_simultaneous_ci95": {
+        "bonferroni_family_count": 3,
+        "lower": 0.00045075001831293936,
+        "upper": 0.0007236443120964749
+      }
+    },
+    "early_detection_stale_first_delivery": {
+      "conditional_share_of_failure": {
+        "estimate": 0.803879731100499,
+        "pointwise_ci95_logit_delta": {
+          "lower": 0.7021849420636864,
+          "upper": 0.8769348731875583
+        },
+        "standard_error_delta": 0.04448243906841801
+      },
+      "estimate": 0.002340987266886593,
+      "event_ess": 14.342169367742853,
+      "events_under_proposal": 951,
+      "interval_method": "asymptotic-log-delta",
+      "maximum_event_contribution": 0.08543404008599824,
+      "pointwise_ci95": {
+        "lower": 0.001395680387571844,
+        "upper": 0.0039265589976939155
+      },
+      "precision_diagnostics": {
+        "failed_gates": [
+          "maximum_relative_standard_error",
+          "minimum_event_ess"
+        ],
+        "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+        "status": "imprecise_exploratory"
+      },
+      "predeclared_interval": {
+        "alpha": 0.05,
+        "lower": 0.001395680387571844,
+        "status": "approximate_log_delta",
+        "upper": 0.0039265589976939155
+      },
+      "relative_standard_error": 0.26387766509989263,
+      "standard_error": 0.0006177342540146133,
+      "within_design_family_simultaneous_ci95": {
+        "bonferroni_family_count": 3,
+        "lower": 0.0012446507263141789,
+        "upper": 0.004403019471939647
+      }
+    },
+    "late_detection": {
+      "conditional_share_of_failure": {
+        "estimate": 0.0,
+        "pointwise_ci95_logit_delta": {
+          "lower": null,
+          "upper": null
+        },
+        "standard_error_delta": null
+      },
+      "estimate": 0.0,
+      "event_ess": 0.0,
+      "events_under_proposal": 0,
+      "interval_method": "asymptotic-log-delta",
+      "maximum_event_contribution": null,
+      "pointwise_ci95": {
+        "lower": 0.0,
+        "upper": null
+      },
+      "precision_diagnostics": {
+        "failed_gates": null,
+        "reason": "Zero IS hits supply no distribution-free upper bound.",
+        "status": "not_observed"
+      },
+      "predeclared_interval": {
+        "alpha": 0.016666666666666666,
+        "lower": 0.0,
+        "status": "unresolved_zero_hits",
+        "upper": null
+      },
+      "relative_standard_error": null,
+      "standard_error": 0.0,
+      "within_design_family_simultaneous_ci95": {
+        "bonferroni_family_count": 3,
+        "lower": 0.0,
+        "upper": null
+      }
+    }
+  },
+  "hours_to_last_durable_shard": 8.660851787527402,
+  "primary_precision_pass": false,
+  "run": "frontier_v3_6499_family_10000_v1",
+  "shards_verified": 1250
+}

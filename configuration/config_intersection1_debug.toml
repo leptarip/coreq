@@ -1,0 +1,103 @@
+name = "config_intersection1_debug"
+scenario = "intersection1"
+server_ip = "127.0.0.1"
+server_port = 5000
+version = 1
+
+[sim]
+# simulation time 1ms=0.001
+delta_time = 0.01
+# number of simulation to run with this configuration
+num_episodes = 1
+
+[ego]
+# ego must be called hero
+role_name = "hero"
+# how often do we execute the ADV stack in [ms]
+decision_period = 10
+# initial and target speed in km/h
+initial_v = 0
+target_v = 50
+# fov is the vehicle field of view.
+# fov angular size degrees can be 30...360
+perception.fov.degrees = 360
+# ray_step in degrees, 1..10. Distance between two rays when creating the fov.
+perception.fov.ray_step = 5
+# range is how far the perception works in meters
+perception.fov.range = 50
+# prediction window for targets in fov in seconds
+perception.prediction_window = 2.0
+
+
+[adversary]
+role_name = "speeder"
+# initial and target speed in km/h
+initial_v = 0
+target_v = 50
+# how often do we execute the ADV stack in [ms]
+decision_period = 10
+# fov is the vehicle field of view.
+# fov angular size degrees can be 30...360
+perception.fov.degrees = 360
+# ray_step in degrees, 1..10. Distance between two rays when creating the fov.
+perception.fov.ray_step = 5
+# range is how far the perception works in meters
+perception.fov.range = 50
+# prediction window for targets in fov in seconds
+perception.prediction_window = 2.0
+
+[communication]
+# type of communication model to load and use for the simulation
+fault.type = "sit"
+# Set the offline time in simulation time
+fault.offline = 1000
+# Set the simulation time step to trigger the offline time by defining the mean and var of a gaussian
+#   different fault types can require different arguments
+fault.trigger_mean = 3800
+fault.trigger_var = 1000
+# model for the network delay
+network.type = "log_norm"
+network.packet_drop_rate = 0.01
+network.delay_min = 50.0
+network.delay_avg = 100.0
+network.jitter = 20.0
+
+
+# You can define a specfic time step to have the communication going offline. To do so, uncomment following line
+#fault.trigger = 1
+
+
+[[sensors]]
+# Must be a unique name amongst sensors. You can have multiple sensors.
+name = "A"
+# The vehicle that has to receivev the messages. "hero" is the only implemented as of now.
+recipient = "hero"
+stream = "vehicle/target"
+# There are position_1, position_2, position_3, position_4 positions to chose from
+position = "position_1"
+orientation = 90
+# Generation time in ms.
+gen_time = 50
+# Retransmission specs
+retransmission.queue_size = 1
+retransmission.policy = "lifo"
+
+# There is only one fov type implemented so far, but it is easy to add new ones
+fov.type = "sector"
+fov.sector.degrees = 70
+fov.sector.radius = 18
+fov.sector.scale = 0.75
+fov.sector.probA.det = 0.99
+fov.sector.probA.miss = 0.01
+fov.sector.probA.wrong = 0.0
+fov.sector.probA.ghost = 0.0
+fov.sector.probB.det = 0.8
+fov.sector.probB.miss = 0.2
+fov.sector.probB.wrong = 0
+fov.sector.probB.ghost = 0.0
+# [worts_case, normal]
+# worts_case -> the uncertainty is constant.
+# normal -> mu=0 sigma=fov.sector.uncertainty.pos/vel
+fov.sector.uncertainty.type = "worst_case"
+fov.sector.uncertainty.pos = 0
+fov.sector.uncertainty.vel = 2.0

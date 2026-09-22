@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "model_id": "illustrative_engineering_cost_v1",
+  "cost_unit": "relative engineering cost index",
+  "base_cost": 100.0,
+  "sensor_bias_semantics": {
+    "meaning": "fixed_signed_residual_systematic_measurement_bias",
+    "residual_boundary": "after_all_calibration_and_compensation_represented_by_the_design",
+    "design_identity": "signed_unc_p_unc_v_tuple",
+    "cost_basis": "absolute_residual_bias_grade",
+    "sign_cost_policy": "equal_magnitude_equal_premium",
+    "performance_separation": "cost_does_not_encode_behavioral_harm"
+  },
+  "nomenclature": {
+    "stored_design_key": "fault",
+    "scientific_name": "guaranteed_service_interruption_ms",
+    "cost_component": "recovery_capability_premium"
+  },
+  "components": [
+    {
+      "id": "detection_capability",
+      "subsystem": "sensor",
+      "keys": ["prob"],
+      "transform": "identity",
+      "premiums": {
+        "0.75": 0.0,
+        "0.975": 12.0
+      }
+    },
+    {
+      "id": "sensor_generation_rate",
+      "subsystem": "sensor",
+      "keys": ["gen_t"],
+      "transform": "identity",
+      "premiums": {
+        "20": 15.0,
+        "50": 6.0,
+        "100": 0.0
+      }
+    },
+    {
+      "id": "position_residual_bias_grade",
+      "subsystem": "sensor",
+      "keys": ["unc_p"],
+      "transform": "absolute",
+      "premiums": {
+        "0": 10.0,
+        "0.2": 7.0,
+        "0.5": 3.0,
+        "1": 0.0
+      }
+    },
+    {
+      "id": "velocity_residual_bias_grade",
+      "subsystem": "sensor",
+      "keys": ["unc_v"],
+      "transform": "absolute",
+      "premiums": {
+        "0": 10.0,
+        "0.2": 8.0,
+        "0.5": 6.0,
+        "1": 4.0,
+        "1.5": 2.0,
+        "2": 0.0
+      }
+    },
+    {
+      "id": "communication_service_tier",
+      "subsystem": "communication",
+      "keys": ["network.delay_min", "network.delay_avg", "network.jit"],
+      "transform": "tuple",
+      "premiums": [
+        {
+          "values": [50.0, 100.0, 100.0],
+          "premium": 0.0,
+          "tier": "baseline"
+        },
+        {
+          "values": [40.0, 55.0, 50.0],
+          "premium": 10.0,
+          "tier": "enhanced"
+        },
+        {
+          "values": [20.0, 25.0, 10.0],
+          "premium": 25.0,
+          "tier": "premium"
+        }
+      ]
+    },
+    {
+      "id": "packet_delivery_reliability",
+      "subsystem": "communication",
+      "keys": ["packet_drop_rate"],
+      "transform": "identity",
+      "premiums": {
+        "0.001": 12.0,
+        "0.01": 0.0
+      }
+    },
+    {
+      "id": "decision_compute_tier",
+      "subsystem": "compute",
+      "keys": ["ego_ad_period"],
+      "transform": "identity",
+      "premiums": {
+        "10": 15.0,
+        "50": 0.0
+      }
+    },
+    {
+      "id": "recovery_capability",
+      "subsystem": "recovery",
+      "keys": ["fault"],
+      "transform": "identity",
+      "premiums": {
+        "0": 50.0,
+        "200": 30.0,
+        "500": 15.0,
+        "1000": 6.0,
+        "2000": 0.0
+      }
+    }
+  ],
+  "profiles": {
+    "compressed": {
+      "description": "Smaller capability premiums, especially for communication and recovery.",
+      "subsystem_multipliers": {
+        "sensor": 0.7,
+        "communication": 0.6,
+        "compute": 0.75,
+        "recovery": 0.5
+      }
+    },
+    "central": {
+      "description": "Proposed primary illustrative engineering-cost profile.",
+      "subsystem_multipliers": {
+        "sensor": 1.0,
+        "communication": 1.0,
+        "compute": 1.0,
+        "recovery": 1.0
+      }
+    },
+    "bias_premiums_zero": {
+      "description": "Focused sensitivity retaining every signed sensor design while assigning zero cost weight to the two residual-bias grades.",
+      "subsystem_multipliers": {
+        "sensor": 1.0,
+        "communication": 1.0,
+        "compute": 1.0,
+        "recovery": 1.0
+      },
+      "component_multipliers": {
+        "position_residual_bias_grade": 0.0,
+        "velocity_residual_bias_grade": 0.0
+      }
+    },
+    "expanded": {
+      "description": "Larger capability premiums, especially for communication and recovery.",
+      "subsystem_multipliers": {
+        "sensor": 1.3,
+        "communication": 1.4,
+        "compute": 1.25,
+        "recovery": 1.5
+      }
+    }
+  },
+  "cap_policy": {
+    "primary_cost_cap": null,
+    "diagnostic_caps": [150.0, 200.0, 250.0, 300.0],
+    "rule": "The primary illustrative ParEGO run should not prefilter by cost. Optional caps are post-hoc budget scenarios and must report the number and parameter levels excluded."
+  },
+  "hypervolume_policy": {
+    "cost_reference": {
+      "method": "ceil_candidate_max_multiplier",
+      "multiplier": 1.1,
+      "population": "candidate_set"
+    },
+    "performance_reference": 0.0,
+    "comparability": "within_active_cost_profile_only",
+    "rule": "For the active profile, resolve ref_cost as ceil(1.1 times the maximum cost over the candidate set). The resulting raw hypervolume is meaningful only within that active cost profile; it must not be compared across profiles."
+  },
+  "bounds": {
+    "maximum_total_to_base_ratio": 3.1
+  }
+}

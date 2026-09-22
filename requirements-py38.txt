@@ -1,0 +1,20 @@
+# Python 3.8: CARLA simulator stack, active learning, audit, simulator server.
+# CARLA's `agents` package is not on PyPI; it comes from the CARLA
+# installation (PythonAPI/carla), which must be on PYTHONPATH.
+Cython==3.2.4
+carla==0.9.14
+joblib==1.4.2
+matplotlib==3.7.1
+networkx==3.1
+numpy==1.24.4
+pandas==2.0.3
+plotly==6.7.0
+pyarrow==17.0.0
+pytest==8.3.5
+redis==5.0.1
+scikit-learn==1.3.0
+scipy==1.10.1
+shapely==2.0.7
+toml==0.10.2
+tomli==2.0.1
+tqdm==4.66.2

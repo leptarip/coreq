@@ -1,0 +1,11 @@
+# Python 3.11: QRF surrogate, ParEGO optimizer client and the figure scripts.
+joblib==1.5.2
+matplotlib==3.9.2
+numpy==2.3.5
+pandas==2.3.3
+pyarrow==22.0.0
+pytest==9.1.1
+quantile-forest==1.4.1
+scikit-learn==1.7.2
+scipy==1.16.3
+toml==0.10.2

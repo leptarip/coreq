@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "method": "bonferroni",
+  "global_delta": 0.01,
+  "cache_reuse": "matching_design_id",
+  "stages": [
+    {
+      "id": "primary",
+      "tau": 0.9523809523809523,
+      "delta": 0.005,
+      "n": 2117,
+      "rng_seed": 2026082701,
+      "run_if": "always"
+    },
+    {
+      "id": "fallback",
+      "tau": 1.0,
+      "delta": 0.005,
+      "n": 2969,
+      "rng_seed": 2026082702,
+      "run_if": {
+        "stage": "primary",
+        "passed": false
+      }
+    }
+  ]
+}

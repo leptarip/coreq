@@ -1,0 +1,16 @@
+design_id,role,cost,initial_trials,additional_trials,cumulative_trials,initial_safety_violations,additional_safety_violations,cumulative_safety_violations,safety_classification,r60_selection_metric_mean,heldout_r240_metric_mean,pooled_r300_metric_mean_descriptive,measured_nondominated,frontier_relevant,frontier_relevance_rule,paired_incumbent_id,paired_regret_mean,paired_regret_lower_95,statistically_supported_improvement
+7364,incumbent,125.0,60,240,300,1,0,1,verified_safe,1.2929928716000747,1.29499580689919,1.2945952198393669,True,False,,,,,False
+7382,incumbent,136.0,60,240,300,0,0,0,verified_safe,1.315441272968482,1.2912422768328682,1.296082076059991,False,False,,,,,False
+7358,incumbent,140.0,60,240,300,0,0,0,verified_safe,1.3527617093699917,1.3284484566332107,1.3333111071805668,True,False,,,,,False
+20636,incumbent,146.0,60,240,300,1,0,1,verified_safe,1.439915052037936,1.4621997616128646,1.4577428196978788,True,False,,,,,False
+6242,incumbent,160.0,60,240,300,0,0,0,verified_safe,1.4566423328818945,1.467740093624434,1.465520541475926,True,False,,,,,False
+2677,incumbent,161.0,60,240,300,0,0,0,verified_safe,1.480185091620406,1.4988903129297242,1.4951492686678607,True,False,,,,,False
+6241,incumbent,170.0,60,240,300,0,0,0,verified_safe,1.5099493106781554,1.4915421366912047,1.495223571488595,False,False,,,,,False
+5317,incumbent,190.0,60,240,300,0,0,0,verified_safe,1.5256539935216962,1.51026962268003,1.513346496848363,True,False,,,,,False
+1624,incumbent,191.0,60,240,300,0,0,0,verified_safe,1.5297468967453431,1.5252279490948186,1.5261317386249234,True,False,,,,,False
+832,incumbent,208.0,60,240,300,0,0,0,verified_safe,1.5492972865672208,1.5556024081913595,1.554341383866532,True,False,,,,,False
+7388,candidate,121.0,60,240,300,1,0,1,verified_safe,1.1731152813450478,1.1500815733314018,1.154688314934131,True,True,verified_safe_below_125_and_final_heldout_measured_nondominated,,,,False
+7376,candidate,123.0,60,240,300,1,0,1,verified_safe,1.1754712245822352,1.1742568581350004,1.1744997314244472,True,True,verified_safe_below_125_and_final_heldout_measured_nondominated,,,,False
+7256,candidate,124.0,60,240,300,1,0,1,verified_safe,1.1766877057539158,1.1879096971664242,1.1856652988839225,True,True,verified_safe_below_125_and_final_heldout_measured_nondominated,,,,False
+6728,candidate,124.0,60,240,300,1,1,2,verified_safe,1.1149495008882133,1.1125249259469894,1.1130098409352343,False,False,verified_safe_below_125_and_final_heldout_measured_nondominated,,,,False
+24043,candidate,154.0,60,240,300,0,0,0,verified_safe,1.3621916535658263,1.3569204694593267,1.3579747062806262,False,False,verified_safe_final_heldout_measured_nondominated_and_heldout_paired_lower95_gt_zero,20636,-0.10527929215353789,-0.13131600605150426,False

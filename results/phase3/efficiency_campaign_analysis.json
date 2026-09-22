@@ -1,0 +1,1332 @@
+{
+  "M1": {
+    "comparison-mc-7256": {
+      "aggregate_failures": 9,
+      "ci_lower": 0.0002062715371622571,
+      "ci_upper": 0.0029196164652532663,
+      "estimate": 0.001,
+      "estimator": "exact_binomial",
+      "failed_gates": null,
+      "interval_method": "exact-clopper-pearson-two-sided",
+      "max_event_contribution": null,
+      "mode_ess": null,
+      "mode_events": 3,
+      "one_sided_upper": 0.002582505138293429,
+      "reason": "Exact binomial inference; weighted ESS and contribution gates do not apply to an unweighted nominal sample.",
+      "relative_standard_error": null,
+      "standard_error": 0.0005770615218501404,
+      "status": "mc_exact"
+    },
+    "estimate-6242": {
+      "aggregate_ess": 37.69606944656582,
+      "aggregate_failures": 669,
+      "ci_lower": 3.1079910851373273e-07,
+      "ci_upper": 8.476778770292925e-07,
+      "estimate": 5.132811398127907e-07,
+      "estimator": "stratified",
+      "failed_gates": [
+        "maximum_relative_standard_error",
+        "minimum_event_ess"
+      ],
+      "gate_checks": {
+        "maximum_event_contribution": true,
+        "maximum_relative_standard_error": false,
+        "minimum_event_ess": false,
+        "minimum_event_paths": true
+      },
+      "interval_method": "stratified-asymptotic-log-scale-normal-delta-two-sided",
+      "max_event_contribution": 0.13453650173722675,
+      "mode_ess": 15.241529162059294,
+      "mode_events": 49,
+      "reason": "Mode estimate is valid but does not meet the campaign's predeclared precision gates; report as exploratory.",
+      "relative_standard_error": 0.2559623440576423,
+      "standard_error": 1.3138064370706033e-07,
+      "status": "imprecise_exploratory",
+      "stratum_counts": {
+        "decision_boundary_sensor": 4950,
+        "decision_boundary_sensor_delivery": 1350,
+        "early_detection_sensor8_delivery3150": 450,
+        "fault_sensor8_sd500": 450,
+        "nominal": 1800
+      }
+    },
+    "estimate-7256": {
+      "aggregate_failures": 194,
+      "ci_lower": 0.0004921491780338321,
+      "ci_upper": 0.0016530806820653997,
+      "estimate": 0.0009019768837958616,
+      "estimator": "iid_weighted",
+      "failed_gates": [
+        "maximum_event_contribution",
+        "maximum_relative_standard_error",
+        "minimum_event_ess"
+      ],
+      "gate_checks": {
+        "maximum_event_contribution": false,
+        "maximum_relative_standard_error": false,
+        "minimum_event_ess": false,
+        "minimum_event_paths": true
+      },
+      "interval_method": "asymptotic-log-scale-normal-delta-two-sided",
+      "max_event_contribution": 0.249629544104292,
+      "mode_ess": 10.434201947559416,
+      "mode_events": 91,
+      "reason": "Mode estimate is valid but does not meet the campaign's predeclared precision gates; report as exploratory.",
+      "relative_standard_error": 0.3090908908897849,
+      "standard_error": 0.0002787928385744547,
+      "status": "imprecise_exploratory"
+    }
+  },
+  "audit": {
+    "incomplete_campaign": false,
+    "schema": "frontier-v3-efficiency-15h-v1"
+  },
+  "capped_effort_ratio": 1.8636942675159234,
+  "complete": true,
+  "completed_local": "2026-09-09T14:04:37.843954+02:00",
+  "episodes": 15000,
+  "family_probability_evidence": {
+    "comparison-mc-7256": {
+      "aggregate": {
+        "estimate": 0.003,
+        "partition_residual": 0.0,
+        "relative_standard_error": 0.3328329577697764,
+        "standard_error": 0.0009984988733093292
+      },
+      "covariance_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          5.546296296296296e-07,
+          -7.407407407407408e-10
+        ],
+        [
+          0.0,
+          -7.407407407407408e-10,
+          4.438518518518518e-07
+        ]
+      ],
+      "covariance_order": [
+        "late_detection",
+        "early_detection_stale_first_delivery",
+        "early_detection_fresh_first_delivery"
+      ],
+      "failures_under_proposal": 9,
+      "family_counts": {
+        "early_detection_fresh_first_delivery": 4,
+        "early_detection_stale_first_delivery": 5,
+        "late_detection": 0
+      },
+      "family_estimates": {
+        "early_detection_fresh_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.4444444444444444,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.1768367773507297,
+              "upper": 0.7486904673200908
+            },
+            "standard_error_delta": 0.16563466499998442
+          },
+          "estimate": 0.0013333333333333333,
+          "event_ess": null,
+          "events_under_proposal": 4,
+          "interval_method": "exact-clopper-pearson",
+          "maximum_event_contribution": null,
+          "one_sided_cp_upper95": 0.003048553035598473,
+          "pointwise_ci95": {
+            "lower": 0.0003634041764460826,
+            "upper": 0.0034103129754086787
+          },
+          "precision_status": {
+            "failed_gates": [
+              "minimum_event_paths",
+              "maximum_relative_standard_error"
+            ],
+            "reason": "The interval construction is exact; this status describes width, not validity.",
+            "status": "mc_exact_but_imprecise"
+          },
+          "relative_standard_error": 0.49966655548141964,
+          "standard_error": 0.0006662220739752262,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 0.0002600906484727862,
+            "upper": 0.003950786010054835
+          }
+        },
+        "early_detection_stale_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.5555555555555556,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.25130953267990913,
+              "upper": 0.8231632226492703
+            },
+            "standard_error_delta": 0.16563466499998442
+          },
+          "estimate": 0.0016666666666666668,
+          "event_ess": null,
+          "events_under_proposal": 5,
+          "interval_method": "exact-clopper-pearson",
+          "maximum_event_contribution": null,
+          "one_sided_cp_upper95": 0.0035011258326776203,
+          "pointwise_ci95": {
+            "lower": 0.000541376624784874,
+            "upper": 0.003885122923253421
+          },
+          "precision_status": {
+            "failed_gates": [
+              "minimum_event_paths",
+              "maximum_relative_standard_error"
+            ],
+            "reason": "The interval construction is exact; this status describes width, not validity.",
+            "status": "mc_exact_but_imprecise"
+          },
+          "relative_standard_error": 0.44684076209167245,
+          "standard_error": 0.0007447346034861208,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 0.0004075247208448622,
+            "upper": 0.004455724838347288
+          }
+        },
+        "late_detection": {
+          "conditional_share_of_failure": {
+            "estimate": 0.0,
+            "pointwise_ci95_logit_delta": {
+              "lower": null,
+              "upper": null
+            },
+            "standard_error_delta": null
+          },
+          "estimate": 0.0,
+          "event_ess": null,
+          "events_under_proposal": 0,
+          "interval_method": "exact-clopper-pearson",
+          "maximum_event_contribution": null,
+          "one_sided_cp_upper95": 0.0009980790119965867,
+          "pointwise_ci95": {
+            "lower": 0.0,
+            "upper": 0.0012288708038255115
+          },
+          "precision_status": {
+            "failed_gates": null,
+            "reason": "Zero nominal-MC hits; use the exact one-sided upper bound.",
+            "status": "not_observed"
+          },
+          "relative_standard_error": null,
+          "standard_error": 0.0,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 0.0,
+            "upper": 0.0015945579203793985
+          }
+        }
+      },
+      "n": 3000,
+      "stratum_counts": null
+    },
+    "estimate-6242": {
+      "aggregate": {
+        "estimate": 1.0732919311145007e-06,
+        "partition_residual": -6.352747104407253e-22,
+        "relative_standard_error": 0.16246084690204726,
+        "standard_error": 1.7436791610199555e-07
+      },
+      "covariance_matrix": [
+        [
+          2.9828523440116365e-17,
+          -5.76656701255886e-18,
+          -1.134855204631725e-17
+        ],
+        [
+          -5.76656701255886e-18,
+          1.0483747671622323e-14,
+          -2.932100557676281e-17
+        ],
+        [
+          -1.134855204631725e-17,
+          -2.932100557676281e-17,
+          1.9983466219961394e-14
+        ]
+      ],
+      "covariance_order": [
+        "late_detection",
+        "early_detection_stale_first_delivery",
+        "early_detection_fresh_first_delivery"
+      ],
+      "failures_under_proposal": 669,
+      "family_counts": {
+        "early_detection_fresh_first_delivery": 82,
+        "early_detection_stale_first_delivery": 31,
+        "late_detection": 556
+      },
+      "family_estimates": {
+        "early_detection_fresh_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.5962057304947744,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.438943865603842,
+              "upper": 0.7359084662702793
+            },
+            "standard_error_delta": 0.07801365598920927
+          },
+          "estimate": 6.39902799824268e-07,
+          "event_ess": 20.4421612323395,
+          "events_under_proposal": 82,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.10791490360266169,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 4.1502329021495593e-07,
+            "upper": 9.866328056212323e-07
+          },
+          "precision_status": {
+            "failed_gates": [],
+            "gate_checks": {
+              "maximum_event_contribution": true,
+              "maximum_relative_standard_error": true,
+              "minimum_event_ess": true,
+              "minimum_event_paths": true
+            },
+            "reason": null,
+            "status": "precise"
+          },
+          "relative_standard_error": 0.22091306437483268,
+          "standard_error": 1.4136288841121418e-07,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 3.770790608410508e-07,
+            "upper": 1.0859144294823154e-06
+          }
+        },
+        "early_detection_stale_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.2799224187390671,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.153979201901407,
+              "upper": 0.453641891499398
+            },
+            "standard_error_delta": 0.07804443668297131
+          },
+          "estimate": 3.004384733706952e-07,
+          "event_ess": 8.600055192650972,
+          "events_under_proposal": 31,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.2577657591394956,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 1.5405080014849504e-07,
+            "upper": 5.859318886646867e-07
+          },
+          "precision_status": {
+            "failed_gates": [
+              "maximum_event_contribution",
+              "maximum_relative_standard_error",
+              "minimum_event_ess"
+            ],
+            "gate_checks": {
+              "maximum_event_contribution": false,
+              "maximum_relative_standard_error": false,
+              "minimum_event_ess": false,
+              "minimum_event_paths": true
+            },
+            "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+            "status": "imprecise_exploratory"
+          },
+          "relative_standard_error": 0.34080246966254707,
+          "standard_error": 1.0239017370637831e-07,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 1.3286967457380305e-07,
+            "upper": 6.793369259828868e-07
+          }
+        },
+        "late_detection": {
+          "conditional_share_of_failure": {
+            "estimate": 0.12387185076615845,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.08867277674040328,
+              "upper": 0.1704303301866613
+            },
+            "standard_error_delta": 0.020691740187226235
+          },
+          "estimate": 1.3295065791953744e-07,
+          "event_ess": 544.8837036074475,
+          "events_under_proposal": 556,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.0019173547961382246,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 1.2266581194839632e-07,
+            "upper": 1.440978310132074e-07
+          },
+          "precision_status": {
+            "failed_gates": [],
+            "gate_checks": {
+              "maximum_event_contribution": true,
+              "maximum_relative_standard_error": true,
+              "minimum_event_ess": true,
+              "minimum_event_paths": true
+            },
+            "reason": null,
+            "status": "precise"
+          },
+          "relative_standard_error": 0.041079522517320506,
+          "standard_error": 5.461549545698214e-09,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 1.2049816435038985e-07,
+            "upper": 1.466900142133219e-07
+          }
+        }
+      },
+      "n": 9000,
+      "stratum_counts": {
+        "decision_boundary_sensor": 4950,
+        "decision_boundary_sensor_delivery": 1350,
+        "early_detection_sensor8_delivery3150": 450,
+        "fault_sensor8_sd500": 450,
+        "nominal": 1800
+      }
+    },
+    "estimate-7256": {
+      "aggregate": {
+        "estimate": 0.003327288705641458,
+        "partition_residual": -4.336808689942018e-19,
+        "relative_standard_error": 0.19385720319839736,
+        "standard_error": 0.0006450188827092687
+      },
+      "covariance_matrix": [
+        [
+          3.5940399132381214e-16,
+          -5.785950519635002e-14,
+          -2.83625708843836e-14
+        ],
+        [
+          -5.785950519635002e-14,
+          3.250233158350552e-07,
+          -8.148310611995987e-10
+        ],
+        [
+          -2.83625708843836e-14,
+          -8.148310611995987e-10,
+          9.265587742360545e-08
+        ]
+      ],
+      "covariance_order": [
+        "late_detection",
+        "early_detection_stale_first_delivery",
+        "early_detection_fresh_first_delivery"
+      ],
+      "failures_under_proposal": 194,
+      "family_counts": {
+        "early_detection_fresh_first_delivery": 101,
+        "early_detection_stale_first_delivery": 50,
+        "late_detection": 43
+      },
+      "family_estimates": {
+        "early_detection_fresh_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.32894021691730096,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.18927992428291063,
+              "upper": 0.5071823617782175
+            },
+            "standard_error_delta": 0.08353459184109817
+          },
+          "estimate": 0.0010944790685801866,
+          "event_ess": 12.87711490131092,
+          "events_under_proposal": 101,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.20572351245296983,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 0.0006345604907875391,
+            "upper": 0.0018877387561168273
+          },
+          "precision_status": {
+            "failed_gates": [
+              "maximum_event_contribution",
+              "maximum_relative_standard_error",
+              "minimum_event_ess"
+            ],
+            "gate_checks": {
+              "maximum_event_contribution": false,
+              "maximum_relative_standard_error": false,
+              "minimum_event_ess": false,
+              "minimum_event_paths": true
+            },
+            "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+            "status": "imprecise_exploratory"
+          },
+          "relative_standard_error": 0.278117954275963,
+          "standard_error": 0.0003043942795513829,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 0.0005624065731422342,
+            "upper": 0.002129926086865283
+          }
+        },
+        "early_detection_stale_first_delivery": {
+          "conditional_share_of_failure": {
+            "estimate": 0.6710364257033645,
+            "pointwise_ci95_logit_delta": {
+              "lower": 0.49279537766764925,
+              "upper": 0.8107012670478969
+            },
+            "standard_error_delta": 0.08353572893837932
+          },
+          "estimate": 0.002232731920316818,
+          "event_ess": 15.26469051627006,
+          "events_under_proposal": 50,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.17577391014296054,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 0.0013535985079657575,
+            "upper": 0.00368284376694048
+          },
+          "precision_status": {
+            "failed_gates": [
+              "maximum_relative_standard_error",
+              "minimum_event_ess"
+            ],
+            "gate_checks": {
+              "maximum_event_contribution": true,
+              "maximum_relative_standard_error": false,
+              "minimum_event_ess": false,
+              "minimum_event_paths": true
+            },
+            "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+            "status": "imprecise_exploratory"
+          },
+          "relative_standard_error": 0.2553410717763346,
+          "standard_error": 0.00057010816152293,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 0.001211603324618033,
+            "upper": 0.0041144586901601735
+          }
+        },
+        "late_detection": {
+          "conditional_share_of_failure": {
+            "estimate": 2.3357379334552597e-05,
+            "pointwise_ci95_logit_delta": {
+              "lower": 1.2655950446538569e-05,
+              "upper": 4.31071719948594e-05
+            },
+            "standard_error_delta": 7.30267414488507e-06
+          },
+          "estimate": 7.771674445324004e-08,
+          "event_ess": 16.717227709075303,
+          "events_under_proposal": 43,
+          "interval_method": "asymptotic-log-delta",
+          "maximum_event_contribution": 0.15302666368769707,
+          "one_sided_cp_upper95": null,
+          "pointwise_ci95": {
+            "lower": 4.818095965219015e-08,
+            "upper": 1.2535849040806014e-07
+          },
+          "precision_status": {
+            "failed_gates": [
+              "minimum_event_ess"
+            ],
+            "gate_checks": {
+              "maximum_event_contribution": true,
+              "maximum_relative_standard_error": true,
+              "minimum_event_ess": false,
+              "minimum_event_paths": true
+            },
+            "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+            "status": "imprecise_exploratory"
+          },
+          "relative_standard_error": 0.2439365336337181,
+          "standard_error": 1.8957953247220864e-08,
+          "within_design_family_simultaneous_ci95": {
+            "bonferroni_family_count": 3,
+            "lower": 4.334067634418631e-08,
+            "upper": 1.3935851670714404e-07
+          }
+        }
+      },
+      "n": 3000,
+      "stratum_counts": null
+    }
+  },
+  "fraction_fewer_capped_episodes": 0.46343130553656864,
+  "generated_local": "2026-09-09T14:22:37.739610+02:00",
+  "historical_samples_pooled": false,
+  "hours_to_last_durable_shard": 13.623836555878322,
+  "independent_numerical_checks": {
+    "comparison-mc-7256": {
+      "early_detection_fresh_first_delivery": {
+        "estimate": 0.0013333333333333333,
+        "reproduced": true,
+        "standard_error": 0.0006662220739752263
+      },
+      "early_detection_stale_first_delivery": {
+        "estimate": 0.0016666666666666668,
+        "reproduced": true,
+        "standard_error": 0.0007447346034861208
+      },
+      "late_detection": {
+        "estimate": 0.0,
+        "reproduced": true,
+        "standard_error": 0.0
+      }
+    },
+    "estimate-6242": {
+      "early_detection_fresh_first_delivery": {
+        "estimate": 6.399027998242684e-07,
+        "reproduced": true,
+        "standard_error": 1.4136288841121418e-07
+      },
+      "early_detection_stale_first_delivery": {
+        "estimate": 3.004384733706952e-07,
+        "reproduced": true,
+        "standard_error": 1.0239017370637854e-07
+      },
+      "late_detection": {
+        "estimate": 1.3295065791953755e-07,
+        "reproduced": true,
+        "standard_error": 5.461549545698214e-09
+      }
+    },
+    "estimate-7256": {
+      "early_detection_fresh_first_delivery": {
+        "estimate": 0.0010944790685801869,
+        "reproduced": true,
+        "standard_error": 0.00030439427955138257
+      },
+      "early_detection_stale_first_delivery": {
+        "estimate": 0.002232731920316818,
+        "reproduced": true,
+        "standard_error": 0.0005701081615229297
+      },
+      "late_detection": {
+        "estimate": 7.771674445324006e-08,
+        "reproduced": true,
+        "standard_error": 1.8957953247220904e-08
+      }
+    }
+  },
+  "primary": {
+    "blocks": 60,
+    "horizon": 50,
+    "interpretation": "Measured saving for min(first-hit time, horizon); not uncensored waiting time or N95.",
+    "mean_capped_episodes_saved": 22.599999999999998,
+    "methods": {
+      "is": {
+        "blocks_with_hit": 48,
+        "hit_probability_interval": [
+          0.6766995761987096,
+          0.892158877475638
+        ],
+        "mean_capped_wait": 26.166666666666668,
+        "observations": [
+          {
+            "capped_wait": 7,
+            "censored": false,
+            "first_hit": 7
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 2,
+            "censored": false,
+            "first_hit": 2
+          },
+          {
+            "capped_wait": 29,
+            "censored": false,
+            "first_hit": 29
+          },
+          {
+            "capped_wait": 10,
+            "censored": false,
+            "first_hit": 10
+          },
+          {
+            "capped_wait": 28,
+            "censored": false,
+            "first_hit": 28
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 16,
+            "censored": false,
+            "first_hit": 16
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 23,
+            "censored": false,
+            "first_hit": 23
+          },
+          {
+            "capped_wait": 5,
+            "censored": false,
+            "first_hit": 5
+          },
+          {
+            "capped_wait": 15,
+            "censored": false,
+            "first_hit": 15
+          },
+          {
+            "capped_wait": 9,
+            "censored": false,
+            "first_hit": 9
+          },
+          {
+            "capped_wait": 35,
+            "censored": false,
+            "first_hit": 35
+          },
+          {
+            "capped_wait": 8,
+            "censored": false,
+            "first_hit": 8
+          },
+          {
+            "capped_wait": 34,
+            "censored": false,
+            "first_hit": 34
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 11,
+            "censored": false,
+            "first_hit": 11
+          },
+          {
+            "capped_wait": 12,
+            "censored": false,
+            "first_hit": 12
+          },
+          {
+            "capped_wait": 34,
+            "censored": false,
+            "first_hit": 34
+          },
+          {
+            "capped_wait": 8,
+            "censored": false,
+            "first_hit": 8
+          },
+          {
+            "capped_wait": 32,
+            "censored": false,
+            "first_hit": 32
+          },
+          {
+            "capped_wait": 5,
+            "censored": false,
+            "first_hit": 5
+          },
+          {
+            "capped_wait": 42,
+            "censored": false,
+            "first_hit": 42
+          },
+          {
+            "capped_wait": 16,
+            "censored": false,
+            "first_hit": 16
+          },
+          {
+            "capped_wait": 18,
+            "censored": false,
+            "first_hit": 18
+          },
+          {
+            "capped_wait": 15,
+            "censored": false,
+            "first_hit": 15
+          },
+          {
+            "capped_wait": 36,
+            "censored": false,
+            "first_hit": 36
+          },
+          {
+            "capped_wait": 13,
+            "censored": false,
+            "first_hit": 13
+          },
+          {
+            "capped_wait": 33,
+            "censored": false,
+            "first_hit": 33
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 35,
+            "censored": false,
+            "first_hit": 35
+          },
+          {
+            "capped_wait": 1,
+            "censored": false,
+            "first_hit": 1
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 9,
+            "censored": false,
+            "first_hit": 9
+          },
+          {
+            "capped_wait": 22,
+            "censored": false,
+            "first_hit": 22
+          },
+          {
+            "capped_wait": 3,
+            "censored": false,
+            "first_hit": 3
+          },
+          {
+            "capped_wait": 20,
+            "censored": false,
+            "first_hit": 20
+          },
+          {
+            "capped_wait": 50,
+            "censored": false,
+            "first_hit": 50
+          },
+          {
+            "capped_wait": 33,
+            "censored": false,
+            "first_hit": 33
+          },
+          {
+            "capped_wait": 12,
+            "censored": false,
+            "first_hit": 12
+          },
+          {
+            "capped_wait": 15,
+            "censored": false,
+            "first_hit": 15
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 37,
+            "censored": false,
+            "first_hit": 37
+          },
+          {
+            "capped_wait": 20,
+            "censored": false,
+            "first_hit": 20
+          },
+          {
+            "capped_wait": 2,
+            "censored": false,
+            "first_hit": 2
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 25,
+            "censored": false,
+            "first_hit": 25
+          },
+          {
+            "capped_wait": 44,
+            "censored": false,
+            "first_hit": 44
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 33,
+            "censored": false,
+            "first_hit": 33
+          },
+          {
+            "capped_wait": 13,
+            "censored": false,
+            "first_hit": 13
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 38,
+            "censored": false,
+            "first_hit": 38
+          },
+          {
+            "capped_wait": 10,
+            "censored": false,
+            "first_hit": 10
+          },
+          {
+            "capped_wait": 4,
+            "censored": false,
+            "first_hit": 4
+          },
+          {
+            "capped_wait": 27,
+            "censored": false,
+            "first_hit": 27
+          },
+          {
+            "capped_wait": 21,
+            "censored": false,
+            "first_hit": 21
+          }
+        ],
+        "probability_hit_by_horizon": 0.8
+      },
+      "mc": {
+        "blocks_with_hit": 3,
+        "hit_probability_interval": [
+          0.010432329644348225,
+          0.13924324672107277
+        ],
+        "mean_capped_wait": 48.766666666666666,
+        "observations": [
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 13,
+            "censored": false,
+            "first_hit": 13
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 41,
+            "censored": false,
+            "first_hit": 41
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 22,
+            "censored": false,
+            "first_hit": 22
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          },
+          {
+            "capped_wait": 50,
+            "censored": true,
+            "first_hit": null
+          }
+        ],
+        "probability_hit_by_horizon": 0.05
+      }
+    },
+    "predeclared_success": true,
+    "saving_interval_95_hoeffding": [
+      10.450240352632784,
+      34.74975964736721
+    ],
+    "status": "complete"
+  },
+  "run": "frontier_v3_efficiency_15h_v2",
+  "secondary_family_contrasts": [
+    {
+      "bonferroni_count": 2,
+      "family": "early_detection_stale_first_delivery",
+      "precision_6242": {
+        "failed_gates": [
+          "maximum_event_contribution",
+          "maximum_relative_standard_error",
+          "minimum_event_ess"
+        ],
+        "gate_checks": {
+          "maximum_event_contribution": false,
+          "maximum_relative_standard_error": false,
+          "minimum_event_ess": false,
+          "minimum_event_paths": true
+        },
+        "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+        "status": "imprecise_exploratory"
+      },
+      "precision_7256": {
+        "failed_gates": [
+          "maximum_relative_standard_error",
+          "minimum_event_ess"
+        ],
+        "gate_checks": {
+          "maximum_event_contribution": true,
+          "maximum_relative_standard_error": false,
+          "minimum_event_ess": false,
+          "minimum_event_paths": true
+        },
+        "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+        "status": "imprecise_exploratory"
+      },
+      "ratio_6242_over_7256": 0.00013456092540122948,
+      "simultaneous_ci95": [
+        5.1806891760582375e-05,
+        0.00034950258603647387
+      ],
+      "status": "approximate_secondary",
+      "supports_lower_6242": true
+    },
+    {
+      "bonferroni_count": 2,
+      "family": "early_detection_fresh_first_delivery",
+      "precision_6242": {
+        "failed_gates": [],
+        "gate_checks": {
+          "maximum_event_contribution": true,
+          "maximum_relative_standard_error": true,
+          "minimum_event_ess": true,
+          "minimum_event_paths": true
+        },
+        "reason": null,
+        "status": "precise"
+      },
+      "precision_7256": {
+        "failed_gates": [
+          "maximum_event_contribution",
+          "maximum_relative_standard_error",
+          "minimum_event_ess"
+        ],
+        "gate_checks": {
+          "maximum_event_contribution": false,
+          "maximum_relative_standard_error": false,
+          "minimum_event_ess": false,
+          "minimum_event_paths": true
+        },
+        "reason": "Valid weighted estimate, but one or more uniform reporting gates fail.",
+        "status": "imprecise_exploratory"
+      },
+      "ratio_6242_over_7256": 0.000584664264666461,
+      "simultaneous_ci95": [
+        0.00026373331401498116,
+        0.0012961286428856535
+      ],
+      "status": "approximate_secondary",
+      "supports_lower_6242": true
+    }
+  ]
+}
